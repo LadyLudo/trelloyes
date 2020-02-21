@@ -4,6 +4,12 @@ import './List.css'
 
 
 class List extends React.Component {
+    static defaultProps= { cards: [] }
+
+    onAddRandom = () => {
+
+    }
+
 
     render(){
 
@@ -16,10 +22,14 @@ class List extends React.Component {
                     {this.props.cards.map(card =>
                         <Card
                             key={card.id}
+                            cardId={card.id}
                             title={card.title}
-                            content={card.content} />
+                            content={card.content}
+                            listId={this.props.listId}
+                            onDelete={this.props.onDelete}
+                        />
                     )}
-                    <button type="button" className="List-add-button">
+                    <button type="button" className="List-add-button" onClick={this.props.onAddRandom}>
                     + Add Random Card
                     </button>
                 </div>

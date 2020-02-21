@@ -11,13 +11,13 @@ it('renders without crashing', () => {
   ReactDOM.render(<Card />, div);
   ReactDOM.unmountComponentAtNode(div)
 })
-
-//  Smoke test - list
-// it('renders without crashing', () => {
-//   const div = document.createElement('div')
-//   ReactDOM.render(<List />, div);
-//   ReactDOM.unmountComponentAtNode(div)
-// })
+ //
+ // Smoke test - list
+it('renders without crashing', () => {
+  const div = document.createElement('div')
+  ReactDOM.render(<List />, div);
+  ReactDOM.unmountComponentAtNode(div)
+})
 
 
 // Snapshot test - card
@@ -28,8 +28,8 @@ it('renders UI as expected', () => {
 });
 
 // Snapshot test - list
-// it('renders UI as expected', () => {
-//   const tree = renderer
-//       .create(<List />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+it('renders UI as expected', () => {
+  const tree = renderer
+      .create(<List />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
